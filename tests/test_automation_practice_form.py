@@ -22,6 +22,7 @@ def test_filling_and_send_form(open_url):
     open_url.element('#react-select-4-input').type('Karnal').press_enter()
     open_url.element('#submit').click()
 
+    open_url.element("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
     open_url.element('.table').all('tr td:nth-child(2)').should(have.texts('Бобр Добр',
                                                                            'bobrdobr@test.ru',
                                                                            'Male',
